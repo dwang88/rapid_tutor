@@ -1,0 +1,73 @@
+/* Style for the main tutor list container */
+.tutor-list {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+  
+  /* Style for the tutor list title */
+  .tutor-list h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the tutors container */
+  .tutors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style for individual tutor cards */
+  .tutor-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Hover effect for tutor cards */
+  .tutor-card:hover {
+    transform: translateX(-2px);
+  }
+  
+  /* Style for the tutor card content */
+  .tutor-content {
+    flex: 1;
+  }
+  
+  /* Style for tutor card title */
+  .tutor-card h2 {
+    color: #444;
+    margin-top: 0;
+  }
+  
+  /* Style for tutor card text */
+  .tutor-card p {
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  /* Style for strong text in tutor card */
+  .tutor-card p strong {
+    color: #333;
+  }
+  
+  /* Style for tutor card images */
+  .tutor-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 20px;
+  }
+  
