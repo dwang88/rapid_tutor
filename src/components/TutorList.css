@@ -1,74 +1,93 @@
+/* src/components/TutorList.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .tutor-list {
-    background-color: #f5f5f5;
-    min-height: 100vh;
-    font-family: 'Poppins';
-    background: linear-gradient(120deg, #ff7e5f, #feb47b);
-  }
-  
-  /* Style for the tutor list title */
-  .tutor-list h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-  
-  /* Style for the tutors container */
-  .tutors {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Style for individual tutor cards */
-  .tutor-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px 0;
-    padding: 20px;
-    width: 100%;
-    max-width: 800px;
-    text-align: left;
-    transition: transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* Hover effect for tutor cards */
-  .tutor-card:hover {
-    transform: translateX(3px);
-  }
-  
-  /* Style for the tutor card content */
-  .tutor-content {
-    flex: 1;
-  }
-  
-  /* Style for tutor card title */
-  .tutor-card h2 {
-    color: #444;
-    margin-top: 0;
-  }
-  
-  /* Style for tutor card text */
-  .tutor-card p {
-    color: #666;
-    margin: 10px 0;
-  }
-  
-  /* Style for strong text in tutor card */
-  .tutor-card p strong {
-    color: #333;
-  }
-  
-  /* Style for tutor card images */
-  .tutor-image {
-    width: 150px;
-    height: auto;
-    border-radius: 8px;
-    margin-left: 20px;
-  }
-  
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  font-family: 'Poppins';
+  background: linear-gradient(120deg, #ff7e5f, #feb47b);
+  padding-top: 20px;
+}
+
+/* Style for the tutor list title */
+.tutor-list h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Style for the tutors container */
+.tutors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for individual tutor cards */
+.tutor-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hover effect for tutor cards */
+.tutor-card:hover {
+  transform: translateX(3px);
+}
+
+/* Style for the tutor card content */
+.tutor-content {
+  flex: 1;
+}
+
+/* Style for tutor card title */
+.tutor-card h2 {
+  color: #444;
+  margin-top: 0;
+}
+
+/* Style for tutor card text */
+.tutor-card p {
+  color: #666;
+  margin: 10px 0;
+}
+
+/* Style for strong text in tutor card */
+.tutor-card p strong {
+  color: #333;
+}
+
+/* Style for tutor card images */
+.tutor-image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+/* Style for the form button */
+.form-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}

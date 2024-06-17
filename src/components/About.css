@@ -9,7 +9,7 @@
 
 body {
     background: linear-gradient(120deg, #ff7e5f, #feb47b);
-    height: 100vh; /* Ensure body covers the entire viewport height */
+    height: 150vh; /* Ensure body covers the entire viewport height */
 }
 
 .about {
@@ -50,4 +50,10 @@ body {
 .about-info ul li {
     font-size: 1.1em;
     margin-bottom: 10px;
+}
+
+.aboutusimg img {
+    max-width: 200px;
+    border-radius: 15px;
+    margin-right: 10px;
 }

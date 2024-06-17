@@ -1,0 +1,72 @@
+/* src/components/Modal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+    position: relative;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .modal-content p {
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .modal-content p strong {
+    color: #333;
+  }
+  
+  /* Style for the form button inside modal */
+  .modal-content .form-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-content .form-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for the close button as an 'X' in the top right corner */
+  .modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ff5e57;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .modal-close-button:hover {
+    color: #ff3830;
+  }
+  
