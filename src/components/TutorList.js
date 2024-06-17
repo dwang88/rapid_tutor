@@ -1,15 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './TutorList.css';
 
 const TutorList = () => {
-  const [tutors, setTutors] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/tutors')
-      .then((response) => response.json())
-      .then((data) => setTutors(data))
-      .catch((error) => console.error('Error fetching tutors:', error));
-  }, []);
+  const tutors = [
+    {
+      _id: '1',
+      name: 'Kevin Chau',
+      subject: 'Computer Science',
+      email: 'john.doe@example.com',
+      phone: '123-456-7890',
+      rate: 40,
+      location: 'New York, NY',
+      image: 'https://via.placeholder.com/150', // Replace with the actual image URL
+    },
+    {
+      _id: '2',
+      name: 'Jane Smith',
+      subject: 'Mathematics',
+      email: 'jane.smith@example.com',
+      phone: '987-654-3210',
+      rate: 35,
+      location: 'Los Angeles, CA',
+      image: 'https://via.placeholder.com/150', // Replace with the actual image URL
+    },
+    // Add more tutor objects as needed
+  ];
 
   return (
     <div className="tutor-list">
