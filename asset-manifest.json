@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b4caace.css",
-    "main.js": "/static/js/main.04f5baff.js",
-    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
-    "index.html": "/index.html",
-    "main.2b4caace.css.map": "/static/css/main.2b4caace.css.map",
-    "main.04f5baff.js.map": "/static/js/main.04f5baff.js.map",
-    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/rapid_tutor/static/css/main.2b4caace.css",
+    "main.js": "/rapid_tutor/static/js/main.40b345d2.js",
+    "static/js/453.ed3810f9.chunk.js": "/rapid_tutor/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/rapid_tutor/index.html",
+    "main.2b4caace.css.map": "/rapid_tutor/static/css/main.2b4caace.css.map",
+    "main.40b345d2.js.map": "/rapid_tutor/static/js/main.40b345d2.js.map",
+    "453.ed3810f9.chunk.js.map": "/rapid_tutor/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2b4caace.css",
-    "static/js/main.04f5baff.js"
+    "static/js/main.40b345d2.js"
   ]
 }
