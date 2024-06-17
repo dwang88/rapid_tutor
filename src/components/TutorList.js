@@ -1,5 +1,3 @@
-// src/components/TutorList.js
-
 import React, { useState } from 'react';
 import './TutorList.css';
 import Navbar from './Navbar';
@@ -16,7 +14,7 @@ const TutorList = () => {
       rate: 40,
       location: 'New York, NY',
       image: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg',
-      description: 'Kevin Chau is an experienced tutor in Computer Science, specializing in algorithms, data structures, and web development.',
+      description: 'I specialize in helping students understand computer science concepts and improve their coding skills.'
     },
     {
       _id: '2',
@@ -27,33 +25,49 @@ const TutorList = () => {
       rate: 35,
       location: 'Los Angeles, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'Jane Smith has a deep understanding of Mathematics and loves helping students conquer calculus and algebra.',
+      description: 'Experienced math tutor with a focus on algebra, geometry, and calculus.'
     },
     {
       _id: '3',
       name: 'David Wang',
       subject: 'Linear Algebra',
       email: 'david.wang@example.com',
-      phone: '987-654-3210',
-      rate: 35,
-      location: 'Los Angeles, CA',
+      phone: '987-654-3211',
+      rate: 45,
+      location: 'San Francisco, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'David Wang is an expert in Linear Algebra with years of experience teaching students at the university level.',
+      description: 'Expert in linear algebra and advanced mathematics topics.'
     },
     {
       _id: '4',
-      name: 'Emily Johnson',
+      name: 'Anna Lee',
       subject: 'S.A.T & A.C.T',
-      email: 'emily.johnson@example.com',
-      phone: '987-654-3210',
+      email: 'anna.lee@example.com',
+      phone: '987-654-3212',
       rate: 60,
-      location: 'Los Angeles, CA',
+      location: 'Chicago, IL',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'Emily Johnson specializes in test preparation for SAT and ACT, helping students achieve their best scores.',
+      description: 'Specialized in SAT and ACT preparation with a track record of improving student scores.'
     },
+    // Add more tutor objects as needed
   ];
 
+  const [sortOrder, setSortOrder] = useState('default');
   const [selectedTutor, setSelectedTutor] = useState(null);
+
+  const handleSortOrderChange = (e) => {
+    setSortOrder(e.target.value);
+  };
+
+  const sortedTutors = [...tutors].sort((a, b) => {
+    if (sortOrder === 'lowest') {
+      return a.rate - b.rate;
+    } else if (sortOrder === 'highest') {
+      return b.rate - a.rate;
+    } else {
+      return 0;
+    }
+  });
 
   const handleCardClick = (tutor) => {
     setSelectedTutor(tutor);
@@ -67,9 +81,19 @@ const TutorList = () => {
     <div className="tutor-list">
       <Navbar />
       <h1>Available Tutors</h1>
-      {tutors.length > 0 ? (
+      <div className="sort-filter">
+        <label>
+          Sort by Price:
+          <select value={sortOrder} onChange={handleSortOrderChange}>
+            <option value="default">Default</option>
+            <option value="lowest">Lowest to Highest</option>
+            <option value="highest">Highest to Lowest</option>
+          </select>
+        </label>
+      </div>
+      {sortedTutors.length > 0 ? (
         <div className="tutors">
-          {tutors.map((tutor) => (
+          {sortedTutors.map((tutor) => (
             <div className="tutor-card" key={tutor._id} onClick={() => handleCardClick(tutor)}>
               <div className="tutor-content">
                 <h2>{tutor.name}</h2>
@@ -80,7 +104,7 @@ const TutorList = () => {
                 <button
                   className="form-button"
                   onClick={(e) => {
-                    e.stopPropagation(); // Prevent card click
+                    e.stopPropagation();
                     window.open('https://docs.google.com/forms/d/e/1FAIpQLSdFbNAu6RnNnvirSxFrETVliiulseui_EyOychP8cDU0KYWTA/viewform?embedded=true', '_blank');
                   }}
                 >
