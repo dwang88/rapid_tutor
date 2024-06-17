@@ -1,16 +1,19 @@
-/* Style for the main tutor list container */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .tutor-list {
     font-family: Arial, sans-serif;
-    padding: 20px;
     background-color: #f5f5f5;
     min-height: 100vh;
+    font-family: 'Poppins';
+    background: linear-gradient(120deg, #ff7e5f, #feb47b);
   }
   
   /* Style for the tutor list title */
   .tutor-list h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
+    font-weight: 700;
   }
   
   /* Style for the tutors container */
@@ -38,7 +41,7 @@
   
   /* Hover effect for tutor cards */
   .tutor-card:hover {
-    transform: translateX(-2px);
+    transform: translateX(3px);
   }
   
   /* Style for the tutor card content */

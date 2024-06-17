@@ -1,5 +1,6 @@
 import React from 'react';
 import './TutorList.css';
+import Navbar from './Navbar';
 
 const TutorList = () => {
   const tutors = [
@@ -11,7 +12,7 @@ const TutorList = () => {
       phone: '123-456-7890',
       rate: 40,
       location: 'New York, NY',
-      image: 'https://via.placeholder.com/150', // Replace with the actual image URL
+      image: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg', // Replace with the actual image URL
     },
     {
       _id: '2',
@@ -21,14 +22,35 @@ const TutorList = () => {
       phone: '987-654-3210',
       rate: 35,
       location: 'Los Angeles, CA',
-      image: 'https://via.placeholder.com/150', // Replace with the actual image URL
+      image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg', // Replace with the actual image URL
+    },
+    {
+      _id: '2',
+      name: 'David Wang',
+      subject: 'Linear Algebra',
+      email: 'jane.smith@example.com',
+      phone: '987-654-3210',
+      rate: 35,
+      location: 'Los Angeles, CA',
+      image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg', // Replace with the actual image URL
+    },
+    {
+      _id: '2',
+      name: 'Jane Smith',
+      subject: 'S.A.T & A.C.T',
+      email: 'jane.smith@example.com',
+      phone: '987-654-3210',
+      rate: 60,
+      location: 'Los Angeles, CA',
+      image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg', // Replace with the actual image URL
     },
     // Add more tutor objects as needed
   ];
 
   return (
     <div className="tutor-list">
-      <h1>Tutor List</h1>
+    <Navbar />
+      <h1>Available Tutors</h1>
       {tutors.length > 0 ? (
         <div className="tutors">
           {tutors.map((tutor) => (
