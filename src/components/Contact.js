@@ -13,15 +13,15 @@ const Contact = () => {
         <p>Feel free to reach out to us for any inquiries or questions.</p>
         <form className="contact-form">
           <label>
-            Name:
+            Name: 
             <input type="text" name="name" />
           </label>
           <label>
-            Email:
+            Email: 
             <input type="email" name="email" />
           </label>
           <label>
-            Message:
+            Message: 
             <textarea name="message" rows="5" />
           </label>
           <button type="submit">Submit</button>

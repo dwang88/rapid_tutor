@@ -6,7 +6,7 @@ body {
 }
 
 .home {
-  background: linear-gradient(120deg, #ff7e5f, #feb47b);
+  background: linear-gradient(120deg, #ff7e5f, #ff975a);
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -64,6 +64,7 @@ body {
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s;
+  font-weight: 600;
 }
 
 .buttons .btn:hover {
