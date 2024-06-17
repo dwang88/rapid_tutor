@@ -7,10 +7,10 @@ import './Navbar.css';
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar-brand">Rapid Tutor</div>
+      <Link className="navbar-link"to="/"><div className="navbar-brand">Rapid Tutor</div></Link>
       <div className="navbar-links">
         <Link to="/">Home</Link>
-        <Link to="/tutors">Tutor List</Link>
+        <Link to="/tutors">Find Tutors</Link>
         <Link to="/about">About Us</Link>
         <Link to="/contact">Contact Us</Link>
       </div>

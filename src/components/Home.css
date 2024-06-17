@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 body {
   margin: 0;
@@ -6,7 +6,7 @@ body {
 }
 
 .home {
-  background: linear-gradient(120deg, #ff7e5f, #ff975a);
+  background: linear-gradient(120deg, #288cff, #2584ff);
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -59,8 +59,8 @@ body {
   padding: 10px 20px;
   margin-right: 10px;
   font-size: 1em;
-  color: #fff;
-  background-color: #ff5a31;
+  color: #2d2d2d;
+  background-color: #ffea31;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s;
@@ -68,10 +68,40 @@ body {
 }
 
 .buttons .btn:hover {
-  background-color: #feb47b;
+  background-color: #ffe600;
 }
 
 .image-content img {
   max-width: 600px;
   border-radius: 15px;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+/* New styles for the wave transition and additional section */
+.wave-transition {
+  background: url('https://www.svgrepo.com/show/263515/wave.svg') no-repeat center bottom;
+  background-size: cover;
+  height: 150px;
+  width: 100%;
+}
+
+.additional-section {
+  background: #fff;
+  color: #333;
+  padding: 150px 20px;
+  text-align: center;
+}
+
+.additional-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.additional-section p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './TutorList.css';
 import Navbar from './Navbar';
 import Modal from './Modal';
+import Footer from './Footer';
 
 const TutorList = () => {
   const tutors = [
@@ -12,6 +13,7 @@ const TutorList = () => {
       email: 'john.doe@example.com',
       phone: '123-456-7890',
       rate: 40,
+      exp: '1 year',
       location: 'New York, NY',
       image: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg',
       description: 'I specialize in helping students understand computer science concepts and improve their coding skills.'
@@ -23,6 +25,7 @@ const TutorList = () => {
       email: 'jane.smith@example.com',
       phone: '987-654-3210',
       rate: 35,
+      exp: '2 years',
       location: 'Los Angeles, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
       description: 'Experienced math tutor with a focus on algebra, geometry, and calculus.'
@@ -34,6 +37,7 @@ const TutorList = () => {
       email: 'david.wang@example.com',
       phone: '987-654-3211',
       rate: 45,
+      exp: '2 years',
       location: 'San Francisco, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
       description: 'Expert in linear algebra and advanced mathematics topics.'
@@ -45,6 +49,7 @@ const TutorList = () => {
       email: 'anna.lee@example.com',
       phone: '987-654-3212',
       rate: 60,
+      exp: '2 years',
       location: 'Chicago, IL',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
       description: 'Specialized in SAT and ACT preparation with a track record of improving student scores.'
@@ -99,6 +104,7 @@ const TutorList = () => {
                 <h2>{tutor.name}</h2>
                 <p><strong>Subject:</strong> {tutor.subject}</p>
                 <p><strong>Rate:</strong> ${tutor.rate}/hr</p>
+                <p><strong>Experience:</strong> {tutor.exp}</p>
                 <p><strong>Location:</strong> {tutor.location}</p>
                 <p><strong>About:</strong> {tutor.description}</p>
                 <button
@@ -115,10 +121,12 @@ const TutorList = () => {
             </div>
           ))}
         </div>
+        
       ) : (
         <p>No tutors available</p>
       )}
       <Modal show={!!selectedTutor} handleClose={handleCloseModal} tutor={selectedTutor} />
+      <Footer />
     </div>
   );
 };

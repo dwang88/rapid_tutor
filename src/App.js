@@ -4,12 +4,16 @@ import TutorList from './components/TutorList';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
+    // create router for different pages
     <Router>
       <Routes>
+        {/* home path is / */}
         <Route path="/" element={<Home />} />
+        {/* rest of paths (imported at top of file) */}
         <Route path="/tutors" element={<TutorList />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

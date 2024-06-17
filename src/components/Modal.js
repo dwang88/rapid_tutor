@@ -1,5 +1,3 @@
-// src/components/Modal.js
-
 import React from 'react';
 import './Modal.css';
 
@@ -8,13 +6,19 @@ const Modal = ({ show, handleClose, tutor }) => {
     return null;
   }
 
+  const openZoomMeetingCreation = () => {
+    // Replace this URL with the actual Zoom meeting creation URL
+    window.open('https://zoom.us/meeting/schedule', '_blank');
+  };
+
   return (
     <div className="modal-overlay" onClick={handleClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-button" onClick={handleClose}>&times;</button>
+        <button className="modal-close-button" onClick={handleClose}>×</button>
         <h2>{tutor.name}</h2>
         <p><strong>Subject:</strong> {tutor.subject}</p>
         <p><strong>Rate:</strong> ${tutor.rate}/hr</p>
+        <p><strong>Experience:</strong> {tutor.exp}</p>
         <p><strong>Email:</strong> {tutor.email}</p>
         <p><strong>Phone:</strong> {tutor.phone}</p>
         <p><strong>Location:</strong> {tutor.location}</p>
@@ -24,6 +28,12 @@ const Modal = ({ show, handleClose, tutor }) => {
           onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdFbNAu6RnNnvirSxFrETVliiulseui_EyOychP8cDU0KYWTA/viewform?embedded=true', '_blank')}
         >
           Book Tutor
+        </button>
+        <button
+          className="zoom-button"
+          onClick={() => window.open('INSERT ZOOM LINK HERE', '_blank')}
+        >
+          Create Zoom Meeting
         </button>
       </div>
     </div>

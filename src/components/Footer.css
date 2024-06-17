@@ -1,0 +1,41 @@
+.footer {
+  background: linear-gradient(120deg, #288cff, #2584ff);
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #2584ff;
+}
+
+.footer-info {
+  text-align: right;
+}
+
+.footer-info p {
+  margin: 0;
+  font-size: 14px;
+}

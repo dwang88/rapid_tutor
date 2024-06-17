@@ -8,8 +8,9 @@
 }
 
 body {
-    background: linear-gradient(120deg, #ff7e5f, #feb47b);
-    height: 150vh; /* Ensure body covers the entire viewport height */
+    background: linear-gradient(120deg, #288cff, #2584ff);
+    height: 100vh; /* Ensure body covers the entire viewport height */
+    color: #fff;
 }
 
 .about {

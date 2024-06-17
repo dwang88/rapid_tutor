@@ -52,6 +52,22 @@
   .modal-content .form-button:hover {
     background-color: #0056b3;
   }
+
+  .zoom-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .zoom-button:hover {
+    background-color: #0056b3;
+  }
   
   /* Style for the close button as an 'X' in the top right corner */
   .modal-close-button {
