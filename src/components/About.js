@@ -13,7 +13,7 @@ const About = () => {
         <h1>About Us</h1>
         <div className="about-info">
           <div className="aboutusimg">
-          <img src="https://media.discordapp.net/attachments/717217667500736534/1252178090243784827/1252178022191202396remix-1718612918450.png?ex=66714539&is=666ff3b9&hm=3515c7f46bd2b93ceb703abc4954c0010246f5c8a02a4cb4346873b03db82802&=&format=webp&quality=lossless&width=794&height=1058"></img>
+          <img src="https://i.imgur.com/6rWjnfx.jpg?1"></img>
           <img src=""></img>
           <h2>Who We Are</h2>
           </div>
