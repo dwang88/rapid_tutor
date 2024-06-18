@@ -1,6 +1,6 @@
 .footer {
-  background: linear-gradient(120deg, #288cff, #2584ff);
-  color: #fff;
+  background: #fff;
+  color: #272727;
   padding: 50px 0;
   text-align: center;
 }
@@ -20,7 +20,7 @@
 }
 
 .footer-links a {
-  color: #fff;
+  color: #292929;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;

@@ -4,6 +4,7 @@ import TutorList from './components/TutorList';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import How from './components/How';
 import Footer from './components/Footer';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/tutors" element={<TutorList />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/how" element={<How />} />
       </Routes>
     </Router>
   );

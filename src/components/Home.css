@@ -105,3 +105,28 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
+
+.additional-section2 {
+  background: linear-gradient(120deg, #40cb00, #40cb00);
+  color: #ffffff;
+  padding: 50px 20px;
+  padding-bottom: 150px;
+  text-align: center;
+}
+
+.additional-section2 h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.additional-section2 ul {
+  align-items: center;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.additional-section2 p {
+  align-items: center;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}

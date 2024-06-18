@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Modal.css';
 
 const Modal = ({ show, handleClose, tutor }) => {
+  const paypalRef = useRef();
+
+  useEffect(() => {
+    if (show && tutor && paypalRef.current) {
+      window.paypal.Buttons({
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [
+              {
+                description: `Tutoring session with ${tutor.name}`,
+                amount: {
+                  value: tutor.rate
+                }
+              }
+            ]
+          });
+        },
+        onApprove: (data, actions) => {
+          return actions.order.capture().then(details => {
+            alert('Transaction completed by ' + details.payer.name.given_name);
+          });
+        }
+      }).render(paypalRef.current);
+    }
+  }, [show, tutor]);
+
   if (!show || !tutor) {
     return null;
   }
-
-  const openZoomMeetingCreation = () => {
-    // Replace this URL with the actual Zoom meeting creation URL
-    window.open('https://zoom.us/meeting/schedule', '_blank');
-  };
 
   return (
     <div className="modal-overlay" onClick={handleClose}>
@@ -22,7 +43,6 @@ const Modal = ({ show, handleClose, tutor }) => {
         <p><strong>Email:</strong> {tutor.email}</p>
         <p><strong>Education:</strong> {tutor.education}</p>
         <p><strong>Location:</strong> {tutor.location}</p>
-        
         <p><strong>Description:</strong> {tutor.description}</p>
         <button
           className="form-button"
@@ -32,10 +52,11 @@ const Modal = ({ show, handleClose, tutor }) => {
         </button>
         <button
           className="zoom-button"
-          onClick={() => window.open('INSERT ZOOM LINK HERE', '_blank')}
+          onClick={() => window.open('https://zoom.us/meeting/schedule', '_blank')}
         >
           Create Zoom Meeting
         </button>
+        <div ref={paypalRef} className="paypal-button-container"></div>
       </div>
     </div>
   );
