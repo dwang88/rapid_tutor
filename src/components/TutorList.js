@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TutorList.css';
 import Navbar from './Navbar';
 import Modal from './Modal';
@@ -6,6 +6,22 @@ import Footer from './Footer';
 
 const TutorList = () => {
   const tutors = [
+    {
+      _id: '0',
+      name: 'Vanessa Perianes',
+      subject: 'Calculus, Algebra, Trigonometry, Discrete Math, & Physics',
+      email: 'john.doe@example.com',
+      education: 'Masters in Applied Physics',
+      rate: 20,
+      exp: '8 years',
+      location: 'Online via Zoom',
+      image: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg',
+      description: "I graduated with a Masters in Applied Physics and I have been an instructor since 2015. I'm able to help with Algebra, Trigonometry, Discrete Math, Calculus, Physics, & Geology. My goal is to ensure students be able to understand lessons easily at the end of our session and to enjoy learning with me.",
+      availability: [
+        { day: 'Monday', start: '00:00', end: '23:59' },
+        { day: 'Tuesday', start: '00:00', end: '23:59' }
+      ]
+    },
     {
       _id: '1',
       name: 'Kevin Chau',
@@ -16,7 +32,11 @@ const TutorList = () => {
       exp: '1 year',
       location: 'New York, NY',
       image: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg',
-      description: 'I specialize in helping students understand computer science concepts and improve their coding skills.'
+      description: 'I specialize in helping students understand computer science concepts and improve their coding skills.',
+      availability: [
+        { day: 'Monday', start: '09:00', end: '17:00' },
+        { day: 'Wednesday', start: '10:00', end: '14:00' }
+      ]
     },
     {
       _id: '2',
@@ -28,7 +48,11 @@ const TutorList = () => {
       exp: '2 years',
       location: 'Los Angeles, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'Experienced math tutor with a focus on algebra, geometry, and calculus.'
+      description: 'Experienced math tutor with a focus on algebra, geometry, and calculus.',
+      availability: [
+        { day: 'Tuesday', start: '02:21', end: '23:59' },
+        { day: 'Thursday', start: '13:00', end: '18:00' }
+      ]
     },
     {
       _id: '3',
@@ -40,7 +64,11 @@ const TutorList = () => {
       exp: '2 years',
       location: 'San Francisco, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'Expert in linear algebra and advanced mathematics topics.'
+      description: 'Expert in linear algebra and advanced mathematics topics.',
+      availability: [
+        { day: 'Wednesday', start: '09:00', end: '17:00' },
+        { day: 'Friday', start: '10:00', end: '14:00' }
+      ]
     },
     {
       _id: '4',
@@ -52,19 +80,64 @@ const TutorList = () => {
       exp: '2 years',
       location: 'Chicago, IL',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'Specialized in SAT and ACT preparation with a track record of improving student scores.'
-    },
-    // Add more tutor objects as needed
+      description: 'Specialized in SAT and ACT preparation with a track record of improving student scores.',
+      availability: [
+        { day: 'Monday', start: '14:00', end: '18:00' },
+        { day: 'Friday', start: '09:00', end: '12:00' }
+      ]
+    }
   ];
 
   const [sortOrder, setSortOrder] = useState('default');
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedTutor, setSelectedTutor] = useState(null);
+  const [availableTutors, setAvailableTutors] = useState([]);
+  const [unavailableTutors, setUnavailableTutors] = useState([]);
 
   const handleSortOrderChange = (e) => {
     setSortOrder(e.target.value);
   };
 
-  const sortedTutors = [...tutors].sort((a, b) => {
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const isTutorAvailable = (availability) => {
+    const now = new Date();
+    const currentDay = now.toLocaleString('en-us', { weekday: 'long' });
+    const currentTime = now.toTimeString().slice(0, 5);
+
+    return availability.some(slot => {
+      if (slot.day === currentDay) {
+        return currentTime >= slot.start && currentTime <= slot.end;
+      }
+      return false;
+    });
+  };
+
+  useEffect(() => {
+    const filterTutors = () => {
+      const available = [];
+      const unavailable = [];
+      tutors.forEach(tutor => {
+        if (isTutorAvailable(tutor.availability)) {
+          available.push(tutor);
+        } else {
+          unavailable.push(tutor);
+        }
+      });
+      setAvailableTutors(available);
+      setUnavailableTutors(unavailable);
+    };
+
+    filterTutors();
+  }, []);
+
+  const filteredTutors = availableTutors.filter(tutor =>
+    tutor.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const sortedTutors = filteredTutors.sort((a, b) => {
     if (sortOrder === 'lowest') {
       return a.rate - b.rate;
     } else if (sortOrder === 'highest') {
@@ -86,27 +159,45 @@ const TutorList = () => {
     <div className="tutor-list">
       <Navbar />
       <h1>Available Tutors</h1>
-      <div className="sort-filter">
-        <label>
-          Sort by Price:
-          <select value={sortOrder} onChange={handleSortOrderChange}>
-            <option value="default">Default</option>
-            <option value="lowest">Lowest to Highest</option>
-            <option value="highest">Highest to Lowest</option>
-          </select>
-        </label>
+      <div className="controls">
+        <div className="sort-filter">
+          <label>
+            Sort by Price:
+            <select className='input' value={sortOrder} onChange={handleSortOrderChange}>
+              <option className='droptext' value="default">Default</option>
+              <option className='droptext' value="lowest">Lowest to Highest</option>
+              <option className='droptext' value="highest">Highest to Lowest</option>
+            </select>
+          </label>
+        </div>
+        <div className="search-filter">
+          <label>
+            Search by Description:
+            <input
+              className='input'
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              placeholder="Enter subject, location, etc"
+            />
+          </label>
+        </div>
       </div>
       {sortedTutors.length > 0 ? (
         <div className="tutors">
           {sortedTutors.map((tutor) => (
             <div className="tutor-card" key={tutor._id} onClick={() => handleCardClick(tutor)}>
               <div className="tutor-content">
-                <h2>{tutor.name}</h2>
-                <p><strong>Subject:</strong> {tutor.subject}</p>
-                <p><strong>Rate:</strong> ${tutor.rate}/hr</p>
+                <h2>{tutor.name + " • $" + tutor.rate + "/hr"}</h2>
+                <p><strong>Subjects:</strong> {tutor.subject}</p>
                 <p><strong>Experience:</strong> {tutor.exp}</p>
                 <p><strong>Location:</strong> {tutor.location}</p>
                 <p><strong>About:</strong> {tutor.description}</p>
+                <p><strong>Available:</strong> {tutor.availability.map(slot => (
+                  <span key={`${slot.day}-${slot.start}`}>
+                    {slot.day} {slot.start}-{slot.end}<br />
+                  </span>
+                ))}</p>
                 <button
                   className="form-button"
                   onClick={(e) => {
@@ -121,9 +212,36 @@ const TutorList = () => {
             </div>
           ))}
         </div>
-        
       ) : (
-        <p>No tutors available</p>
+        <p className='notutors'>No tutors available</p>
+      )}
+      {unavailableTutors.length > 0 && (
+        <>
+          <h1>Unavailable Tutors</h1>
+          <div className="tutors">
+            {unavailableTutors.map((tutor) => (
+              <div className="tutor-card unavailable" key={tutor._id}>
+                <div className="tutor-content">
+                  <h2>{tutor.name + " • $" + tutor.rate + "/hr"}</h2>
+                  <p><strong>Subjects:</strong> {tutor.subject}</p>
+                  <p><strong>About:</strong> {tutor.description}</p>
+                  <p><strong>Available:</strong> {tutor.availability.map(slot => (
+                  <span key={`${slot.day}-${slot.start}`}>
+                    {slot.day} {slot.start}-{slot.end}<br />
+                  </span>
+                ))}</p>
+                  <button
+                    className="form-button"
+                    disabled
+                  >
+                    Book Tutor
+                  </button>
+                </div>
+                <img src={tutor.image} alt={`${tutor.name}'s profile`} className="tutor-image" />
+              </div>
+            ))}
+          </div>
+        </>
       )}
       <Modal show={!!selectedTutor} handleClose={handleCloseModal} tutor={selectedTutor} />
       <Footer />

@@ -15,13 +15,14 @@ const Modal = ({ show, handleClose, tutor }) => {
     <div className="modal-overlay" onClick={handleClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close-button" onClick={handleClose}>×</button>
-        <h2>{tutor.name}</h2>
-        <p><strong>Subject:</strong> {tutor.subject}</p>
+        <h2>{tutor.name + " • $" + tutor.rate + "/hr"}</h2>
+        <p><strong>Subjects:</strong> {tutor.subject}</p>
         <p><strong>Rate:</strong> ${tutor.rate}/hr</p>
         <p><strong>Experience:</strong> {tutor.exp}</p>
         <p><strong>Email:</strong> {tutor.email}</p>
-        <p><strong>Phone:</strong> {tutor.phone}</p>
+        <p><strong>Education:</strong> {tutor.education}</p>
         <p><strong>Location:</strong> {tutor.location}</p>
+        
         <p><strong>Description:</strong> {tutor.description}</p>
         <button
           className="form-button"

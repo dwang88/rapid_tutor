@@ -15,21 +15,33 @@
   color: #fff;
 }
 
-/* Style for the sort filter form */
-.sort-filter {
+/* Style for the controls section (sort and search) */
+.controls {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  gap: 20px;
 }
 
-.sort-filter label {
-  margin: 0 10px;
+.sort-filter,
+.search-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 500;
   color: #fff;
 }
 
-.sort-filter select {
+.input {
   margin-left: 5px;
+}
+
+.droptext {
+  font-family: 'Poppins' !important;
+}
+
+.sort-filter select,
+.search-filter input {
   padding: 5px;
   border: none;
   border-radius: 5px;
@@ -110,25 +122,8 @@
   background-color: #0056b3;
 }
 
-/* Style for the sort filter form */
-.sort-filter {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.sort-filter label {
-  margin: 0 10px;
-  font-weight: 500;
-  color: #fff;
-}
-
-.sort-filter select {
-  font-family: 'Poppins', sans-serif !important;
-  background-color: #fff !important;
-  color: #444 !important;
-}
-
-
 /* Other styles remain unchanged */
 
+.notutors {
+  text-align: center;
+}
