@@ -122,6 +122,13 @@
   background-color: #0056b3;
 }
 
+.unavailable {
+  background-color: #f5f5f5;
+  color: #999;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
 /* Other styles remain unchanged */
 
 .notutors {
