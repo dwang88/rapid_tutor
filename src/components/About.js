@@ -10,11 +10,8 @@ const About = () => {
     <div className="about">
     <Navbar />
       <div className="about-content">
-        <h1>About Us</h1>
         <div className="about-info">
           <div className="aboutusimg">
-          <img src="https://i.imgur.com/6rWjnfx.jpg?1"></img>
-          <img src=""></img>
           <h2>Who We Are</h2>
           </div>
           <p>

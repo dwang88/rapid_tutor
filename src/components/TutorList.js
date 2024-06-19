@@ -32,7 +32,7 @@ const TutorList = () => {
       exp: '3 years',
       location: 'Online via Zoom',
       image: 'https://i.imgur.com/uXuR6wu.png',
-      description: "I'm a passionate English language teacher with a Bachelor's in Secondary Education (English) and years of experience in the classroom. I'm eager to share my expertise and help you reach your learning goals!",
+      description: "As a highly motivated English language instructor with a Bachelor's degree in Secondary English Education, I can help you achieve your writing goals.  My extensive classroom experience allows me to offer engaging and effective instruction tailored to your specific needs.  Let's work together to unlock your full potential as a writer and communicator.",
       availability: [
         { day: 'Monday', start: '09:00', end: '17:00' },
         { day: 'Tuesday', start: '10:00', end: '23:00' },
@@ -78,18 +78,19 @@ const TutorList = () => {
     },
     {
       _id: '4',
-      name: 'Anna Lee',
-      subject: 'S.A.T & A.C.T',
+      name: 'Anna Wilkins',
+      subject: 'SAT, ACT, College Essays, College Prep',
       email: 'anna.lee@example.com',
       phone: '987-654-3212',
-      rate: 60,
-      exp: '2 years',
-      location: 'Chicago, IL',
-      image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'Specialized in SAT and ACT preparation with a track record of improving student scores.',
+      rate: 50,
+      exp: '6 years',
+      education: 'Masters in Applied Mathematics',
+      location: 'Online via Zoom',
+      image: 'https://www.care.com/s/d/aws/photo/1080X1080/92/46024792_t03Wzz746abHAqn4ixO7C769tVe6d010',
+      description: "Hey there! I'm your one-stop shop for crushing college admissions.  I help students like you master the SAT and ACT, brainstorm and write killer college essays, and navigate the sometimes-confusing college prep process.  Let's work together to make your dream school a reality!",
       availability: [
         { day: 'Monday', start: '14:00', end: '18:00' },
-        { day: 'Tuesday', start: '09:00', end: '23:00' }
+        { day: 'Wednesday', start: '00:00', end: '23:00' }
       ]
     }
   ];
@@ -170,9 +171,9 @@ const TutorList = () => {
 
   const sortedTutors = filteredTutors.sort((a, b) => {
     if (sortOrder === 'lowest') {
-      return a.rate - b.rate;
+      return parseFloat(a.rate) - parseFloat(b.rate);
     } else if (sortOrder === 'highest') {
-      return b.rate - a.rate;
+      return parseFloat(b.rate) - parseFloat(a.rate);
     } else {
       return 0;
     }
@@ -222,7 +223,6 @@ const TutorList = () => {
                 <h2>{tutor.name + " • $" + tutor.rate + "/hr"}</h2>
                 <p><strong>Subjects:</strong> {tutor.subject}</p>
                 <p><strong>Experience:</strong> {tutor.exp}</p>
-                <p><strong>Location:</strong> {tutor.location}</p>
                 <p><strong>About:</strong> {tutor.description}</p>
                 <p><strong>Available:</strong> {tutor.availability.map(slot => (
                   <span key={`${slot.day}-${slot.start}`}>

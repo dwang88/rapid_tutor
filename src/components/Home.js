@@ -65,7 +65,7 @@ const Home = () => {
 
       <div className="additional-section">
         <h2>We Unlock Potential!</h2>
-        <p>We offer affordable, top-notch tutoring to help students crush their academic goals. Through awesome tech and a welcoming environment, we personalize learning for everyone. Our goal? Empower YOU to shine in school!</p>
+        <p>We offer affordable, quality tutoring to help students crush their academic goals. Through innovative technology and a welcoming environment, we personalize learning for everyone. Our goal? Empower YOU to shine in school!</p>
       </div>
     </div>
   );

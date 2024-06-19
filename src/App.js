@@ -7,6 +7,8 @@ import Contact from './components/Contact';
 import How from './components/How';
 import ZoomEmbed from './components/ZoomEmbed';
 import Footer from './components/Footer';
+import Faq from './components/Faq';
+
 
 const App = () => {
   return (
@@ -18,6 +20,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/how" element={<How />} />
         <Route path="/zoom/:meetingId" element={<ZoomEmbed />} />
+        <Route path="/faq" element={<Faq />} />
       </Routes>
       <Footer />
     </Router>

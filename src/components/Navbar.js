@@ -17,9 +17,9 @@ const Navbar = () => {
         <div className="navbar-brand">Rapid Tutor</div>
       </Link>
       <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
-        <Link to="/" onClick={toggleMenu}>Home</Link>
         <Link to="/tutors" onClick={toggleMenu}>Find Tutors</Link>
-        <Link to="/about" onClick={toggleMenu}>About Us</Link>
+        <Link to="/faq" onClick={toggleMenu}>FAQ</Link>
+        <Link to="/about" onClick={toggleMenu}>About</Link>
         <Link to="/contact" onClick={toggleMenu}>Contact Us</Link>
         <Link className="howitworksbold" to="/how" onClick={toggleMenu}>How It Works</Link>
       </div>
