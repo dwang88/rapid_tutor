@@ -1,5 +1,3 @@
-// src/components/Modal.js
-
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Modal.css';
@@ -26,7 +24,7 @@ const Modal = ({ show, handleClose, tutor }) => {
         onApprove: (data, actions) => {
           return actions.order.capture().then(details => {
             alert('Transaction completed by ' + details.payer.name.given_name);
-            const meetingId = '86286987037'; // Replace with your actual Zoom meeting ID
+            const meetingId = '83582226724'; // Replace with your actual Zoom meeting ID
             navigate(`/zoom/${meetingId}`);
           });
         }

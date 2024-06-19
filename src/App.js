@@ -8,21 +8,18 @@ import How from './components/How';
 import ZoomEmbed from './components/ZoomEmbed';
 import Footer from './components/Footer';
 
-
 const App = () => {
   return (
-    // create router for different pages
     <Router>
       <Routes>
-        {/* home path is / */}
         <Route path="/" element={<Home />} />
-        {/* rest of paths (imported at top of file) */}
         <Route path="/tutors" element={<TutorList />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/how" element={<How />} />
-        <Route path="/zoom/:meetingId" component={ZoomEmbed} />
+        <Route path="/zoom/:meetingId" element={<ZoomEmbed />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
