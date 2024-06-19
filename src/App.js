@@ -14,6 +14,10 @@ const TRACKING_ID = "G-LL4JR6BV16"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <Router>
       <Routes>
