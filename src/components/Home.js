@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Slider from 'react-slick';
 import './Home.css';
 
+
 const Home = () => {
   const settings = {
     dots: true,
