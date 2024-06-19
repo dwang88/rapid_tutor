@@ -1,35 +1,40 @@
 /* src/components/Navbar.css */
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    color: #fff;
-  }
-  
-  .navbar-brand {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+  background-color: #288cff; /* Added background color */
+}
 
-  .navbar-link {
-    text-decoration: none;
-  }
-  
-  .navbar-links a {
-    margin-left: 20px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .navbar-links a:hover {
-    color: #fff2e9; /* Hover color */
-  }
-  
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-link {
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-links a:hover {
+  color: #fff2e9; /* Hover color */
+}
+
 .howitworksbold {
   background: #fff;
   color: #242424 !important;
@@ -37,7 +42,54 @@
   padding: 3px 10px;
 }
 
-.howitworksbold:hover {
-  background: #eaeaea;
-  padding: 4px 11px;
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #288cff; /* Match background color */
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000; /* Ensure it is above other content */
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 }

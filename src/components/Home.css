@@ -38,6 +38,7 @@ body {
   align-items: center;
   flex: 1;
   padding: 70px;
+  margin-top: 70px;
 }
 
 .text-content {
@@ -129,4 +130,22 @@ body {
   align-items: center;
   font-size: 1.2em;
   margin-bottom: 30px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .text-content {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .image-content img {
+    max-width: 100%;
+  }
 }
