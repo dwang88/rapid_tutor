@@ -40,7 +40,6 @@ const About = () => {
           </ul>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

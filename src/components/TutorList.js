@@ -275,7 +275,6 @@ const TutorList = () => {
         </>
       )}
       <Modal show={!!selectedTutor} handleClose={handleCloseModal} tutor={selectedTutor} />
-      <Footer />
     </div>
   );
 };

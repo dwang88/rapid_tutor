@@ -25,7 +25,6 @@ const Contact = () => {
           Loading…
         </iframe>
       </div>
-      <Footer />
     </div>
   );
 };
