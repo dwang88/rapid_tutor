@@ -66,14 +66,14 @@ const TutorList = () => {
       subject: 'Linear Algebra',
       email: 'david.wang@example.com',
       phone: '987-654-3211',
-      rate: 45,
+      rate: 0.01,
       exp: '2 years',
       location: 'San Francisco, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
       description: 'Expert in linear algebra and advanced mathematics topics.',
       availability: [
-        { day: 'Wednesday', start: '09:00', end: '17:00' },
-        { day: 'Friday', start: '10:00', end: '14:00' }
+        { day: 'Wednesday', start: '00:00', end: '17:00' },
+        { day: 'Tuesday', start: '10:00', end: '23:59' }
       ]
     },
     {

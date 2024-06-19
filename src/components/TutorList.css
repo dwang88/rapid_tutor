@@ -53,7 +53,6 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-
 }
 
 /* Style for individual tutor cards */
@@ -61,7 +60,7 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px 0;
+  margin: 10px;
   padding: 20px;
   width: 100%;
   max-width: 1100px;
@@ -71,6 +70,7 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  flex-wrap: wrap;
 }
 
 /* Hover effect for tutor cards */
@@ -81,6 +81,7 @@
 /* Style for the tutor card content */
 .tutor-content {
   flex: 1;
+  min-width: 200px; /* Ensure some width on smaller screens */
 }
 
 /* Style for tutor card title */
@@ -106,6 +107,7 @@
   height: auto;
   border-radius: 8px;
   margin-left: 20px;
+  min-width: 150px; /* Ensure some width on smaller screens */
 }
 
 /* Style for the form button */
@@ -135,4 +137,30 @@
 
 .notutors {
   text-align: center;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sort-filter, .search-filter {
+    justify-content: center;
+  }
+
+  .tutor-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tutor-image {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+
+  .tutor-content {
+    width: 100%;
+  }
 }

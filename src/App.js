@@ -5,7 +5,9 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import How from './components/How';
+import ZoomEmbed from './components/ZoomEmbed';
 import Footer from './components/Footer';
+
 
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/how" element={<How />} />
+        <Route path="/zoom/:meetingId" component={ZoomEmbed} />
       </Routes>
     </Router>
   );

@@ -1,8 +1,12 @@
+// src/components/Modal.js
+
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Modal.css';
 
 const Modal = ({ show, handleClose, tutor }) => {
   const paypalRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (show && tutor && paypalRef.current) {
@@ -22,11 +26,13 @@ const Modal = ({ show, handleClose, tutor }) => {
         onApprove: (data, actions) => {
           return actions.order.capture().then(details => {
             alert('Transaction completed by ' + details.payer.name.given_name);
+            const meetingId = '86286987037'; // Replace with your actual Zoom meeting ID
+            navigate(`/zoom/${meetingId}`);
           });
         }
       }).render(paypalRef.current);
     }
-  }, [show, tutor]);
+  }, [show, tutor, navigate]);
 
   if (!show || !tutor) {
     return null;
@@ -44,20 +50,6 @@ const Modal = ({ show, handleClose, tutor }) => {
         <p><strong>Education:</strong> {tutor.education}</p>
         <p><strong>Location:</strong> {tutor.location}</p>
         <p><strong>Description:</strong> {tutor.description}</p>
-        { /*
-        <button
-          className="form-button"
-          onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdFbNAu6RnNnvirSxFrETVliiulseui_EyOychP8cDU0KYWTA/viewform?embedded=true', '_blank')}
-        >
-          Book Tutor
-        </button>
-        
-        <button
-          className="zoom-button"
-          onClick={() => window.open('https://zoom.us/meeting/schedule', '_blank')}
-        >
-          Create Zoom Meeting
-        </button> */}
         <h2 className='modaltitle'>Book Tutor:</h2>
         <div ref={paypalRef} className="paypal-button-container"></div>
         <button
