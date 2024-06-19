@@ -6,8 +6,17 @@ const ZoomEmbed = () => {
   const zoomUrl = `https://zoom.us/wc/join/${meetingId}`;
 
   useEffect(() => {
-    const iframe = document.getElementById('zoom-iframe');
-    iframe.allow = 'camera; microphone; fullscreen; speaker; display-capture';
+    // Request camera and microphone permissions
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      .then((stream) => {
+        // Permissions granted
+        const iframe = document.getElementById('zoom-iframe');
+        iframe.allow = 'camera; microphone; fullscreen; speaker; display-capture';
+      })
+      .catch((error) => {
+        // Handle error or permissions denied
+        console.error('Permissions denied or error: ', error);
+      });
   }, []);
 
   return (
