@@ -30,3 +30,14 @@
     color: #fff2e9; /* Hover color */
   }
   
+.howitworksbold {
+  background: #fff;
+  color: #242424 !important;
+  border-radius: 25px;
+  padding: 3px 10px;
+}
+
+.howitworksbold:hover {
+  background: #eaeaea;
+  padding: 4px 11px;
+}

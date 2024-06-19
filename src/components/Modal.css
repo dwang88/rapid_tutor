@@ -1,4 +1,7 @@
 /* src/components/Modal.css */
+* {
+  font-family: 'Poppins' !important;
+}
 
 .modal-overlay {
     position: fixed;
@@ -86,3 +89,16 @@
     color: #ff3830;
   }
   
+.modaltitle {
+  text-align: center;
+  margin: 10px 0 !important;
+}
+
+.paypal-button-container .paypal-button-row .paypal-button-text {
+  font-family: 'Poppins';
+}
+
+.form-button {
+  font-family: 'Poppins';
+  font-weight: 600;
+}

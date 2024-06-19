@@ -44,19 +44,28 @@ const Modal = ({ show, handleClose, tutor }) => {
         <p><strong>Education:</strong> {tutor.education}</p>
         <p><strong>Location:</strong> {tutor.location}</p>
         <p><strong>Description:</strong> {tutor.description}</p>
+        { /*
         <button
           className="form-button"
           onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdFbNAu6RnNnvirSxFrETVliiulseui_EyOychP8cDU0KYWTA/viewform?embedded=true', '_blank')}
         >
           Book Tutor
         </button>
+        
         <button
           className="zoom-button"
           onClick={() => window.open('https://zoom.us/meeting/schedule', '_blank')}
         >
           Create Zoom Meeting
-        </button>
+        </button> */}
+        <h2 className='modaltitle'>Book Tutor:</h2>
         <div ref={paypalRef} className="paypal-button-container"></div>
+        <button
+          className="form-button"
+          onClick={() => window.open('https://rapidtutor.org/#/how', '_blank')}
+        >
+          How It Works
+        </button>
       </div>
     </div>
   );

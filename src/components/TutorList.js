@@ -12,7 +12,7 @@ const TutorList = () => {
       subject: 'Calculus, Algebra, Trigonometry, Discrete Math, & Physics',
       email: 'john.doe@example.com',
       education: 'Masters in Applied Physics',
-      rate: 20,
+      rate: 25,
       exp: '8 years',
       location: 'Online via Zoom',
       image: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg',
@@ -24,18 +24,24 @@ const TutorList = () => {
     },
     {
       _id: '1',
-      name: 'Kevin Chau',
-      subject: 'Computer Science',
+      name: 'Honey Taleon',
+      subject: 'English, Writing, Reading, ',
       email: 'john.doe@example.com',
       phone: '123-456-7890',
-      rate: 40,
-      exp: '1 year',
-      location: 'New York, NY',
-      image: 'https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg',
-      description: 'I specialize in helping students understand computer science concepts and improve their coding skills.',
+      rate: 20,
+      exp: '3 years',
+      location: 'Online via Zoom',
+      image: 'https://i.imgur.com/uXuR6wu.png',
+      description: "I'm a passionate English language teacher with a Bachelor's in Secondary Education (English) and years of experience in the classroom. I'm eager to share my expertise and help you reach your learning goals!",
       availability: [
         { day: 'Monday', start: '09:00', end: '17:00' },
-        { day: 'Wednesday', start: '10:00', end: '14:00' }
+        { day: 'Tuesday', start: '10:00', end: '23:00' },
+        { day: 'Wednesday', start: '09:00', end: '17:00' },
+        { day: 'Thursday', start: '10:00', end: '23:00' },
+        { day: 'Friday', start: '09:00', end: '17:00' },
+        { day: 'Saturday', start: '10:00', end: '23:00' },
+        { day: 'Sunday', start: '10:00', end: '23:00' }
+
       ]
     },
     {
@@ -44,7 +50,7 @@ const TutorList = () => {
       subject: 'Mathematics',
       email: 'jane.smith@example.com',
       phone: '987-654-3210',
-      rate: 35,
+      rate: 0.01,
       exp: '2 years',
       location: 'Los Angeles, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
@@ -232,7 +238,6 @@ const TutorList = () => {
                 >
                   Book Tutor
                 </button>
-                <div ref={paypalRef}></div>
               </div>
               <img src={tutor.image} alt={`${tutor.name}'s profile`} className="tutor-image" />
             </div>
@@ -262,7 +267,6 @@ const TutorList = () => {
                   >
                     Book Tutor
                   </button>
-                  <div ref={paypalRef}></div>
                 </div>
                 <img src={tutor.image} alt={`${tutor.name}'s profile`} className="tutor-image" />
               </div>
