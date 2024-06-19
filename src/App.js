@@ -8,7 +8,10 @@ import How from './components/How';
 import ZoomEmbed from './components/ZoomEmbed';
 import Footer from './components/Footer';
 import Faq from './components/Faq';
+import ReactGA from 'react-ga';
 
+const TRACKING_ID = "G-LL4JR6BV16"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
   return (
