@@ -1,4 +1,8 @@
-/* src/components/Navbar.css */
+/* Existing CSS ... */
+
+body.menu-open {
+  overflow: hidden;
+}
 
 .navbar {
   display: flex;
@@ -6,6 +10,8 @@
   align-items: center;
   padding: 20px;
   color: #fff;
+  position: relative;
+  z-index: 1000; /* Ensure navbar is above other content */
 }
 
 .navbar-brand {
@@ -53,7 +59,12 @@
 }
 
 .close-button {
-  font-size: 1.5em;
+  display: none;
+  font-size: 2em;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
 
 /* Media Query for Mobile */
@@ -70,6 +81,7 @@
     align-items: center;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+    z-index: 9999; /* Ensure it overlays other content */
   }
 
   .navbar-links.open {

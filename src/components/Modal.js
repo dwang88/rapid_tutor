@@ -44,11 +44,10 @@ const Modal = ({ show, handleClose, tutor }) => {
         <p><strong>Subjects:</strong> {tutor.subject}</p>
         <p><strong>Rate:</strong> ${tutor.rate}/hr</p>
         <p><strong>Experience:</strong> {tutor.exp}</p>
-        <p><strong>Email:</strong> {tutor.email}</p>
         <p><strong>Education:</strong> {tutor.education}</p>
         <p><strong>Location:</strong> {tutor.location}</p>
         <p><strong>Description:</strong> {tutor.description}</p>
-        <h2 className='modaltitle'>Book Tutor:</h2>
+        <h3 className='modaltitle'>Book Tutor:</h3>
         <div ref={paypalRef} className="paypal-button-container"></div>
         <button
           className="form-button"

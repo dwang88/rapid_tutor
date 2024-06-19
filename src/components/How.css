@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* src/components/How.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 * {
     font-family: 'Poppins';
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+    box-sizing: border-box;
 }
 
 .how {
     font-family: 'Poppins';
+    overflow: hidden; /* Prevent overflow */
 }
 
 .how-content {
@@ -27,112 +30,123 @@
     font-size: 1.2em;
     margin-bottom: 20px;
 }
-/*here*/
 
 .how {
     font-family: Arial, sans-serif;
     color: #333;
-  }
-  
-  /* Styling for the content area */
-  .how-content {
+}
+
+.how-content {
     padding: 20px;
     margin-bottom: 70px;
     margin-top: 70px;
-  }
-  
-  /* Styling for the main heading */
-  .how-content h1 {
+}
+
+.how-content h1 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  /* Styling for the 'How It Works' section */
-  .additional-section2 {
+}
+
+.additional-section2 {
     margin-top: 30px;
-  }
-  
-  .additional-section2 h2 {
+}
+
+.additional-section2 h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-  }
-  
-  /* Styling for the slider */
-  .slide {
+}
+
+.slide {
     text-align: center;
     padding: 20px 30px;
-  }
-  
-  .slide h3 {
+}
+
+.slide h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-  }
-  
-  .slide p {
+}
+
+.slide p {
     font-size: 1.2rem;
     line-height: 1.6;
-  }
-  
-  /* Styling for the images within the slides */
-  .slide img {
+}
+
+.slide img {
     max-width: 100%;
     height: auto;
     margin-top: 20px;
-  }
-  
-  /* Styling for slick carousel dots */
-  .slick-dots {
+}
+
+.slick-dots {
     bottom: 20px;
-  }
-  
-  .slick-dots li button:before {
+}
+
+.slick-dots li button:before {
     font-size: 14px;
     color: #999;
-  }
-  
-  .works {
-    background: #fff;
+}
+
+.works {
+    background: #ededed;
     color: #2b2b2b;
     padding: 50px 20px;
     padding-bottom: 50px;
     text-align: center;
     border-radius: 15px;
-  }
-  
-  .works h2 {
+}
+
+.works h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
-  }
-  
-  .works ul {
+}
+
+.works ul {
     align-items: center;
     font-size: 2em;
     font-weight: 600;
-  }
-  
-  .works p {
+}
+
+.works p {
     align-items: center;
     font-size: 1.2em;
     margin-bottom: 30px;
-  }
+}
 
-  .slick-next {
-    right: -70px !important;
-  }
-  
-  .slick-prev {
-    left: -70px !important;
-  }
+.slick-next, .slick-prev {
+    display: none !important; /* Hide default arrows */
+}
 
-  .workimg {
+@media (min-width: 768px) {
+    .slick-next, .slick-prev {
+        display: block !important;
+        background-color: black; /* Black background for arrows */
+        color: white; /* White color for the arrow icons */
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slick-next {
+        right: 10px !important;
+    }
+
+    .slick-prev {
+        left: 10px !important;
+    }
+}
+
+.workimg {
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 30% !important;
-  }
+}
 
-  .slick-dots li button {
+.slick-dots li button {
     font-size: 0;
     line-height: 0;
     display: block;
@@ -144,11 +158,11 @@
     border: 0;
     outline: none;
     background: transparent;
-  }
+}
 
-  .worksh2 {
+.worksh2 {
     font-size: 2.5em !important;
     text-align: center;
     color: white;
     margin: 30px 0 !important;
-  }
+}

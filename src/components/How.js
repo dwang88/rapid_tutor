@@ -1,3 +1,5 @@
+// src/components/How.js
+
 import React from 'react';
 import Slider from 'react-slick';
 import Navbar from './Navbar';
@@ -64,7 +66,7 @@ const SampleNextArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, display: 'block' }}
+      style={{ ...style, display: 'block', right: '10px', color: '#222' }} // Ensure the arrow stays within the viewport
       onClick={onClick}
     />
   );
@@ -75,7 +77,7 @@ const SamplePrevArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, display: 'block' }}
+      style={{ ...style, display: 'block', left: '10px', color: '#222'}} // Ensure the arrow stays within the viewport
       onClick={onClick}
     />
   );

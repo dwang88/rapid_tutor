@@ -55,6 +55,16 @@ const Home = () => {
                   <p>Connect with your tutor virtually and get the academic support you need, right away.</p>
                   <img className="workimg" src="https://png.pngtree.com/png-vector/20221224/ourmid/pngtree-helping-hand-support-assistance-concept-png-image_6535836.png" alt="Get instant help" />
                 </div>
+                <div className="slide">
+                <h3>Note: After Payment</h3>
+                <p>After your payment, you will be redirected to a private zoom link. Join the meeting & you will be directed to the tutor you selected.</p>
+                <img className="workimg" src="https://www.bentley.edu/sites/default/files/inline-images/Zoom-Logo.png" alt="Get instant help" />
+                </div>
+                <div className="slide">
+                  <h3>Note: Tutor Hours</h3>
+                  <p>While joining the Zoom meeting, please put your full name as your Zoom username. This ensures that you are matched with the correct tutor.</p>
+                  <img className="workimg" src="https://png.pngtree.com/png-vector/20220611/ourmid/pngtree-badge-or-register-vector-isolated-sticker-hello-my-name-is-in-png-image_4892578.png" alt="Get instant help" />
+                </div>
               </Slider>
             </div>
           </div>

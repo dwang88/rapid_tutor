@@ -25,11 +25,12 @@ const TutorList = () => {
     {
       _id: '1',
       name: 'Honey Taleon',
-      subject: 'English, Writing, Reading, ',
+      subject: ' English, Writing, Reading',
       email: 'john.doe@example.com',
       phone: '123-456-7890',
       rate: 20,
       exp: '3 years',
+      education: "Bachelor's Degree in English Education",
       location: 'Online via Zoom',
       image: 'https://i.imgur.com/uXuR6wu.png',
       description: "As a highly motivated English language instructor with a Bachelor's degree in Secondary English Education, I can help you achieve your writing goals.  My extensive classroom experience allows me to offer engaging and effective instruction tailored to your specific needs.  Let's work together to unlock your full potential as a writer and communicator.",
@@ -219,28 +220,28 @@ const TutorList = () => {
         <div className="tutors">
           {sortedTutors.map((tutor) => (
             <div className="tutor-card" key={tutor._id} onClick={() => handleCardClick(tutor)}>
-              <div className="tutor-content">
-                <h2>{tutor.name + " • $" + tutor.rate + "/hr"}</h2>
-                <p><strong>Subjects:</strong> {tutor.subject}</p>
-                <p><strong>Experience:</strong> {tutor.exp}</p>
-                <p><strong>About:</strong> {tutor.description}</p>
-                <p><strong>Available:</strong> {tutor.availability.map(slot => (
-                  <span key={`${slot.day}-${slot.start}`}>
-                    {slot.day} {slot.start}-{slot.end}<br />
-                  </span>
-                ))}</p>
-                <button
-                  className="form-button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open('https://docs.google.com/forms/d/e/1FAIpQLSdFbNAu6RnNnvirSxFrETVliiulseui_EyOychP8cDU0KYWTA/viewform?embedded=true', '_blank');
-                  }}
-                >
-                  Book Tutor
-                </button>
-              </div>
-              <img src={tutor.image} alt={`${tutor.name}'s profile`} className="tutor-image" />
-            </div>
+  <img src={tutor.image} alt={`${tutor.name}'s profile`} className="tutor-image" />
+  <div className="tutor-name">{tutor.name + " • $" + tutor.rate + "/hr"}</div>
+  <div className="tutor-subject"><strong>Subjects:</strong> {tutor.subject}</div>
+  <div className="tutor-location"><strong>Location:</strong> {tutor.location}</div>
+  <div className="tutor-experience"><strong>Experience:</strong> {tutor.exp}</div>
+  <div className="tutor-description"><strong>About:</strong> {tutor.description}</div>
+  <div className="tutor-availability"><strong>Available:</strong> {tutor.availability.map(slot => (
+    <span key={`${slot.day}-${slot.start}`}>
+      {slot.day} {slot.start}-{slot.end}<br />
+    </span>
+  ))}</div>
+  <button
+    className="form-button"
+    onClick={(e) => {
+      e.stopPropagation();
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSdFbNAu6RnNnvirSxFrETVliiulseui_EyOychP8cDU0KYWTA/viewform?embedded=true', '_blank');
+    }}
+  >
+    Book Tutor
+  </button>
+</div>
+
           ))}
         </div>
       ) : (
