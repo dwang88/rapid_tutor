@@ -234,8 +234,7 @@ const TutorList = () => {
   <button
     className="form-button"
     onClick={(e) => {
-      e.stopPropagation();
-      window.open('https://docs.google.com/forms/d/e/1FAIpQLSdFbNAu6RnNnvirSxFrETVliiulseui_EyOychP8cDU0KYWTA/viewform?embedded=true', '_blank');
+      setSelectedTutor(tutor);
     }}
   >
     Book Tutor
