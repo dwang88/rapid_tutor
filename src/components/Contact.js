@@ -8,21 +8,10 @@ const Contact = () => {
     <div className="contact">
       <Navbar />
       <div className="contact-content">
-        <h1>Contact Us</h1>
-        <p>Feel free to reach out to us for any inquiries or questions.</p>
+        <h1 className='contactusheader'>Contact Us</h1>
+        <p>For immediate assistance, please check out our Frequently Asked Questions.</p>
+        <p>Feel free to reach out to us for any inquiries or questions at davidwang1089@gmail.com.</p>
         {/* Adjusted iframe width for responsiveness */}
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLScLu18gsk7vktuc5S9htDhg0O77YFySqCVNpbVNe-fzYlwkfw/viewform?embedded=true"
-          width="100%"
-          height="1000" /* Adjusted height to fit content */
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Contact Form"
-          className='iframecontact'
-        >
-          Loading…
-        </iframe>
       </div>
     </div>
   );

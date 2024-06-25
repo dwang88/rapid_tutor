@@ -9,8 +9,7 @@ const TutorList = () => {
     {
       _id: '0',
       name: 'Vanessa Perianes',
-      subject: 'Calculus, Algebra, Trigonometry, Discrete Math, & Physics',
-      email: 'john.doe@example.com',
+      subject: 'Calculus, Algebra, Trigonometry, Discrete Math, Physics',
       education: 'Masters in Applied Physics',
       rate: 25,
       exp: '8 years',
@@ -23,32 +22,15 @@ const TutorList = () => {
       ]
     },
     {
-      _id: '1',
-      name: 'Honey Taleon',
-      subject: ' English, Writing, Reading',
-      email: 'john.doe@example.com',
-      phone: '123-456-7890',
-      rate: 20,
-      exp: '3 years',
-      education: "Bachelor's Degree in English Education",
-      location: 'Online via Zoom',
-      image: 'https://i.imgur.com/uXuR6wu.png',
-      description: "As a highly motivated English language instructor with a Bachelor's degree in Secondary English Education, I can help you achieve your writing goals.  My extensive classroom experience allows me to offer engaging and effective instruction tailored to your specific needs.  Let's work together to unlock your full potential as a writer and communicator.",
-      availability: [
-        { day: 'Monday', start: '00:00', end: '23:59' }, { day: 'Tuesday', start: '00:00', end: '23:59' }, { day: 'Wednesday', start: '00:00', end: '23:59' }, { day: 'Thursday', start: '00:00', end: '23:59' }, { day: 'Friday', start: '00:00', end: '23:59' }, { day: 'Saturday', start: '00:00', end: '23:59' }, { day: 'Sunday', start: '00:00', end: '23:59' }
-      ]
-    },
-    {
       _id: '2',
-      name: 'Jane Smith',
-      subject: 'Mathematics',
-      email: 'jane.smith@example.com',
-      phone: '987-654-3210',
+      name: 'Charles Boniel',
+      subject: 'Mathematics, Calculus, Algebra, Trigonometry, Statistics, Probability',
+      education: "Bachelor's Degree in Mathematics",
       rate: 0.01,
       exp: '2 years',
       location: 'Los Angeles, CA',
       image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'Experienced math tutor with a focus on algebra, geometry, and calculus.',
+      description: 'Hey! My lifelong fascination with mathematics led me to pursue an education in math, encompassing subjects like algebra, trigonometry, statistics, probability, and even calculus.  This strong foundation allows me to confidently guide students in their mathematical pursuits.',
       availability: [
         { day: 'Monday', start: '00:00', end: '23:59' }, { day: 'Tuesday', start: '00:00', end: '23:59' }, { day: 'Wednesday', start: '00:00', end: '23:59' }, { day: 'Thursday', start: '00:00', end: '23:59' }, { day: 'Friday', start: '00:00', end: '23:59' }, { day: 'Saturday', start: '00:00', end: '23:59' }, { day: 'Sunday', start: '00:00', end: '23:59' }
       ]
@@ -72,7 +54,7 @@ const TutorList = () => {
     {
       _id: '4',
       name: 'Anna Wilkins',
-      subject: 'SAT, ACT, College Essays, College Prep',
+      subject: 'SAT, ACT',
       email: 'anna.lee@example.com',
       phone: '987-654-3212',
       rate: 50,
@@ -80,7 +62,7 @@ const TutorList = () => {
       education: 'Masters in Applied Mathematics',
       location: 'Online via Zoom',
       image: 'https://www.care.com/s/d/aws/photo/1080X1080/92/46024792_t03Wzz746abHAqn4ixO7C769tVe6d010',
-      description: "Hey there! I'm your one-stop shop for crushing college admissions.  I help students like you master the SAT and ACT, brainstorm and write killer college essays, and navigate the sometimes-confusing college prep process.  Let's work together to make your dream school a reality!",
+      description: "Hey there! I'm your one-stop shop for crushing college admissions.  I help students like you master the SAT and ACT, brainstorm and write killer essay. Let's work together to make your dream score a reality!",
       availability: [
         { day: 'Monday', start: '00:00', end: '23:59' }, { day: 'Tuesday', start: '00:00', end: '23:59' }, { day: 'Wednesday', start: '00:00', end: '23:59' }, { day: 'Thursday', start: '00:00', end: '23:59' }, { day: 'Friday', start: '00:00', end: '23:59' }, { day: 'Saturday', start: '00:00', end: '23:59' }, { day: 'Sunday', start: '00:00', end: '23:59' }
       ]
@@ -210,46 +192,48 @@ const TutorList = () => {
     const shouldTruncateDescription = tutor.description.length > 200;
 
     return (
-      <div className="tutor-card" onClick={() => handleCardClick(tutor)}>
-        <img src={tutor.image} alt={`${tutor.name}'s profile`} className="tutor-image" />
-        <div className="tutor-name">{tutor.name + " • $" + tutor.rate + "/hr"}</div>
-        <div className="tutor-subject"><strong>Subjects:</strong> {tutor.subject}</div>
-        <div className="tutor-location"><strong>Location:</strong> {tutor.location}</div>
-        <div className="tutor-experience"><strong>Experience:</strong> {tutor.exp}</div>
-        <div className="tutor-description">
-          <strong>About:</strong> {isExpanded || !shouldTruncateDescription ? tutor.description : `${tutor.description.slice(0, 200)}...`}
-          {shouldTruncateDescription && (
-            <span className="more-text" onClick={toggleDescription}>
-              {isExpanded ? ' Show less' : ' Show more'}
-            </span>
-          )}
+      <div className='tutorlist-all'>
+        <div className="tutor-card" onClick={() => handleCardClick(tutor)}>
+          <img src={tutor.image} alt={`${tutor.name}'s profile`} className="tutor-image" />
+          <div className="tutor-name">{tutor.name + " • $" + tutor.rate + "/hr"}</div>
+          <div className="tutor-subject"><strong>Subjects:</strong> {tutor.subject}</div>
+          <div className="tutor-location"><strong>Location:</strong> {tutor.location}</div>
+          <div className="tutor-experience"><strong>Experience:</strong> {tutor.exp}</div>
+          <div className="tutor-description">
+            <strong>About:</strong> {isExpanded || !shouldTruncateDescription ? tutor.description : `${tutor.description.slice(0, 200)}...`}
+            {shouldTruncateDescription && (
+              <span className="more-text" onClick={toggleDescription}>
+                {isExpanded ? ' Show less' : ' Show more'}
+              </span>
+            )}
+          </div>
+          <div className="tutor-availability" ref={availabilityRef}>
+            <strong>Available:</strong>
+            {isExpanded || !shouldTruncateAvailability ? tutor.availability.map(slot => (
+              <span key={`${slot.day}-${slot.start}`}>
+                {slot.day} {slot.start}-{slot.end}<br />
+              </span>
+            )) : tutor.availability.slice(0, 2).map(slot => (
+              <span key={`${slot.day}-${slot.start}`}>
+                {slot.day} {slot.start}-{slot.end}<br />
+              </span>
+            ))}
+            {shouldTruncateAvailability && (
+              <span className="more-text" onClick={toggleDescription}>
+                {isExpanded ? ' Show less' : ' Show more'}
+              </span>
+            )}
+          </div>
+          <button
+            className="form-button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedTutor(tutor);
+            }}
+          >
+            View Profile
+          </button>
         </div>
-        <div className="tutor-availability" ref={availabilityRef}>
-          <strong>Available:</strong>
-          {isExpanded || !shouldTruncateAvailability ? tutor.availability.map(slot => (
-            <span key={`${slot.day}-${slot.start}`}>
-              {slot.day} {slot.start}-{slot.end}<br />
-            </span>
-          )) : tutor.availability.slice(0, 2).map(slot => (
-            <span key={`${slot.day}-${slot.start}`}>
-              {slot.day} {slot.start}-{slot.end}<br />
-            </span>
-          ))}
-          {shouldTruncateAvailability && (
-            <span className="more-text" onClick={toggleDescription}>
-              {isExpanded ? ' Show less' : ' Show more'}
-            </span>
-          )}
-        </div>
-        <button
-          className="form-button"
-          onClick={(e) => {
-            e.stopPropagation();
-            setSelectedTutor(tutor);
-          }}
-        >
-          Book Tutor
-        </button>
       </div>
     );
   };
@@ -257,7 +241,7 @@ const TutorList = () => {
   const uniqueSubjects = [...new Set(tutors.flatMap(tutor => tutor.subject.split(',').map(sub => sub.trim())))];
 
   return (
-    <div>
+    <div className='tutorlist-all'>
     <Navbar />
     <div className="tutor-list">
       <div className="controls-tutorsection-wrapper">
@@ -300,7 +284,7 @@ const TutorList = () => {
               onClick={() => handleSubjectClick('')}
               className={`subject-button ${selectedSubject === '' ? 'active' : ''}`}
             >
-              Show All
+              <div className='showallbutton'>Show All</div>
             </button>
           </div>
         </div>

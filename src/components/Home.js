@@ -5,7 +5,6 @@ import Footer from './Footer';
 import Slider from 'react-slick';
 import './Home.css';
 
-
 const Home = () => {
   const settings = {
     dots: true,
@@ -34,6 +33,7 @@ const Home = () => {
           <img src="https://images.pexels.com/photos/8121106/pexels-photo-8121106.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tutoring illustration" />
         </div>
       </div>
+
 
       <div className="how">
         <div className="how-content">
@@ -71,8 +71,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fillOpacity="1" d="M0,192L80,197.3C160,203,320,213,480,197.3C640,181,800,139,960,122.7C1120,107,1280,117,1360,122.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
 
       <div className="additional-section">
         <h2>We Unlock Potential!</h2>

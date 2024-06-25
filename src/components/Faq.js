@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Faq.css';
 import Navbar from './Navbar';
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const contentRefs = useRef([]);
 
   const questions = [
     {
       question: 'What is Rapid Tutor?',
-      answer: 'Rapid Tutor is an online platform that connects students with tutors for personalized learning sessions. It was founded by two college students who want to democratize private tutoring.'
+      answer: 'Rapid Tutor is an online platform that connects students with tutors for personalized learning sessions. It was founded by two college students who want to democratize private tutoring. For more information on how the tutoring process works, visit the How It Works page'
     },
     {
       question: 'How do I book a tutor?',
@@ -16,7 +17,7 @@ const Faq = () => {
     },
     {
       question: 'How do I get tutored?',
-      answer: "After payment, you will be redirected to a Zoom meeting on our website. You will then be put into a breakout room with your booked tutor."
+      answer: "After payment, you will be redirected to a Zoom meeting on our website. You will then be put into a breakout room with your booked tutor. For more information on how the tutoring process works, visit the How It Works page"
     },
     {
       question: 'What payment methods are accepted?',
@@ -28,7 +29,7 @@ const Faq = () => {
     },
     {
       question: 'How do I join a Zoom session?',
-      answer: 'After booking a tutor, you will be redirected to a Zoom meeting. You can join the session by entering the waiting room, where you will be automatically put into a room with your selected tutor.'
+      answer: 'After booking a tutor, you will be redirected to a Zoom meeting. You can join the session by entering the waiting room, where you will be automatically put into a room with your selected tutor. For more information on how the tutoring process works, visit the How It Works page'
     },
     {
         question: "I didn't get a Zoom link",
@@ -36,7 +37,7 @@ const Faq = () => {
     },
     {
       question: 'What does Rapid Tutor offer?',
-      answer: 'We offer affordable, quality tutoring to help students crush their academic goals. Through innovative technology and a welcoming environment, we personalize learning for everyone. Our goal? Empower YOU to shine in school!'
+      answer: 'We offer affordable, quality tutoring to help students crush their academic goals. Through innovative technology and a welcoming environment, we personalize learning for everyone. Our goal? Empower YOU to shine in school! For more information on how the tutoring process works, visit the How It Works page'
     },
     {
       question: 'How can I become a tutor on Rapid Tutor?',
@@ -44,7 +45,7 @@ const Faq = () => {
     },
     {
       question: 'Is Rapid Tutor available worldwide?',
-      answer: 'Yes! Rapid Tutor allows students to connect with a tutor via Zoom, an online meeting platform. '
+      answer: 'Yes! Rapid Tutor allows students to connect with a tutor via Zoom, an online meeting platform. For more information on how the tutoring process works, visit the How It Works page'
     }
   ];
 
@@ -52,8 +53,16 @@ const Faq = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    contentRefs.current.forEach((ref, index) => {
+      if (ref) {
+        ref.style.height = activeIndex === index ? `${ref.scrollHeight + 30}px` : '0px';
+      }
+    });
+  }, [activeIndex]);
+
   return (
-    <div>
+    <div className='faqall'>
       <Navbar />
       <div className="faq-container">
         <h2>Frequently Asked Questions</h2>
@@ -66,7 +75,10 @@ const Faq = () => {
               >
                 <span className="arrow">{activeIndex === index ? '▼' : '▶'}</span> {item.question}
               </div>
-              <div className={`faq-answer ${activeIndex === index ? 'show' : ''}`}>
+              <div
+                ref={el => contentRefs.current[index] = el}
+                className={`faq-answer ${activeIndex === index ? 'show' : ''}`}
+              >
                 {item.answer}
               </div>
             </div>

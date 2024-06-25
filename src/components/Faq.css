@@ -1,54 +1,72 @@
-/* src/components/Faq.css */
+.faqall {
+  background: linear-gradient(315deg, rgb(255, 171, 249) 3%, rgb(156, 205, 255) 38%, rgb(186, 255, 250) 68%, rgb(255, 157, 157) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
 
 .faq-container {
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
-  
-  .faq-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 2.5em;
-    color: #ffffff;
-  }
-  
-  .faq-list {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #292929;
-  }
-  
-  .faq-item {
-    margin-bottom: 10px;
-  }
-  
-  .faq-question {
-    background-color: #f7f7f7;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s;
-  }
-  
-  .faq-question.active,
-  .faq-question:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .faq-answer {
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-top: 5px;
-    display: none;
-    color: #292929;
-  }
-  
-  .faq-answer.show {
-    display: block;
-  }
-  
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.faq-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 2.5em;
+  color: #111;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #111;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  background-color: #f7f7f7;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.faq-question.active,
+.faq-question:hover {
+  background-color: #e0e0e0;
+}
+
+.faq-answer {
+  overflow: hidden;
+  height: 0;
+  padding: 0 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: height 0.5s ease, padding 0.5s ease;
+  color: #292929;
+}
+
+.faq-answer.show {
+  padding: 15px;
+}
