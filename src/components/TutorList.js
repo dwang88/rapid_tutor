@@ -29,10 +29,10 @@ const TutorList = () => {
       rate: 0.01,
       exp: '2 years',
       location: 'Los Angeles, CA',
-      image: 'https://t3.ftcdn.net/jpg/01/92/16/04/360_F_192160468_2ev2JYmocXi7pxbBiPsfNEVwDqmTTLYL.jpg',
-      description: 'Hey! My lifelong fascination with mathematics led me to pursue an education in math, encompassing subjects like algebra, trigonometry, statistics, probability, and even calculus.  This strong foundation allows me to confidently guide students in their mathematical pursuits.',
+      image: 'https://media.discordapp.net/attachments/1257310576082681986/1257313475126886400/Screenshot_2024-07-01_203225.png?ex=6683f3ec&is=6682a26c&hm=2810fe6198b8da17e0d51f760d81654e0b0f0656381c4523b8835f9e87e11095&=&format=webp&quality=lossless&width=1106&height=1058',
+      description: "I'm a passionate and dedicated math tutor with a degree in education. I specialize in math topics for grades 8-12 and love helping students understand and enjoy math. Whether it's algebra, geometry, calculus, or any other high school math subject, I'm here to make learning fun and easy.",
       availability: [
-        { day: 'Monday', start: '00:00', end: '23:59' }, { day: 'Tuesday', start: '00:00', end: '23:59' }, { day: 'Wednesday', start: '00:00', end: '23:59' }, { day: 'Thursday', start: '00:00', end: '23:59' }, { day: 'Friday', start: '00:00', end: '23:59' }, { day: 'Saturday', start: '00:00', end: '23:59' }, { day: 'Sunday', start: '00:00', end: '23:59' }
+        { day: 'Monday', start: '14:00', end: '21:00' }, { day: 'Tuesday', start: '14:00', end: '21:00' }, { day: 'Wednesday', start: '14:00', end: '21:00' }, { day: 'Thursday', start: '14:00', end: '21:00' }, { day: 'Friday', start: '14:00', end: '21:00' }, { day: 'Saturday', start: '14:00', end: '21:00' }, { day: 'Sunday', start: '14:00', end: '21:00' }
       ]
     },
     {
@@ -241,7 +241,7 @@ const TutorList = () => {
   const uniqueSubjects = [...new Set(tutors.flatMap(tutor => tutor.subject.split(',').map(sub => sub.trim())))];
 
   return (
-    <div className='tutorlist-all'>
+    <div className='tutoringall'>
     <Navbar />
     <div className="tutor-list">
       <div className="controls-tutorsection-wrapper">
@@ -258,7 +258,7 @@ const TutorList = () => {
           </div>
 
           <div className="search-filter">
-            <label>
+            <label className='searchdesc'>
               Search by Description:
               <input
                 className='input'

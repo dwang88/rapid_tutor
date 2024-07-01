@@ -17,6 +17,19 @@ const Home = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };
+  
+  const universityImages = [
+    'https://upload.wikimedia.org/wikipedia/commons/1/18/UCSD_Seal.png', // Replace these with the actual image URLs or paths
+    'https://upload.wikimedia.org/wikipedia/commons/0/03/Cal_logo.png',
+    'https://cdn.freelogovectors.net/wp-content/uploads/2023/06/university-of_illinois_at_urbana_champaign_logo-freelogovectors.net_.png',
+    'https://i.pinimg.com/originals/5b/49/f8/5b49f80da12e639ff39eaadb28c3ddaa.png',
+    'https://cdn.bleacherreport.net/images/team_logos/328x328/ucla_football.png',
+    'https://upload.wikimedia.org/wikipedia/commons/c/cd/University_of_Chicago_Coat_of_arms.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/University_of_California%2C_Irvine_logo.svg/1280px-University_of_California%2C_Irvine_logo.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cornell_University_seal.svg/1200px-Cornell_University_seal.svg.png',
+    'https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/block-s-right.png',
+    'https://seeklogo.com/images/U/university-of-michigan-logo-55B0FE825E-seeklogo.com.png'
+  ];
 
   return (
     <div className="home">
@@ -33,7 +46,6 @@ const Home = () => {
           <img src="https://images.pexels.com/photos/8121106/pexels-photo-8121106.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tutoring illustration" />
         </div>
       </div>
-
 
       <div className="how">
         <div className="how-content">
@@ -57,9 +69,9 @@ const Home = () => {
                   <img className="workimg" src="https://png.pngtree.com/png-vector/20221224/ourmid/pngtree-helping-hand-support-assistance-concept-png-image_6535836.png" alt="Get instant help" />
                 </div>
                 <div className="slide">
-                <h3>Note: After Payment</h3>
-                <p>After your payment, you will be redirected to a private zoom link. Join the meeting & you will be directed to the tutor you selected.</p>
-                <img className="workimg" src="https://www.bentley.edu/sites/default/files/inline-images/Zoom-Logo.png" alt="Get instant help" />
+                  <h3>Note: After Payment</h3>
+                  <p>After your payment, you will be redirected to a private zoom link. Join the meeting & you will be directed to the tutor you selected.</p>
+                  <img className="workimg" src="https://www.bentley.edu/sites/default/files/inline-images/Zoom-Logo.png" alt="Get instant help" />
                 </div>
                 <div className="slide">
                   <h3>Note: Tutor Hours</h3>
@@ -72,10 +84,19 @@ const Home = () => {
         </div>
       </div>
 
+      <div className='addslider'>
       <div className="additional-section">
-        <h2>We Unlock Potential!</h2>
-        <p>We offer affordable, quality tutoring to help students crush their academic goals. Through innovative technology and a welcoming environment, we personalize learning for everyone. Our goal? Empower YOU to shine in school!</p>
+        <h2 className='used'>Used by Students at Top Universities</h2>
+        <div className="university-slider">
+          {universityImages.concat(universityImages).map((src, index) => (
+            <div key={index} className="university-slide">
+              <img src={src} alt={`University ${index + 1}`} />
+            </div>
+          ))}
+        </div>
       </div>
+      </div>
+
     </div>
   );
 };
